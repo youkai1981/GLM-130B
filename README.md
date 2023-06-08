@@ -59,7 +59,7 @@ The GLM-130B code is built on the top of [SAT](https://github.com/THUDM/SwissArm
 Download the GLM-130B’s model checkpoint from [here](https://docs.google.com/forms/d/e/1FAIpQLSehr5Dh_i3TwACmFFi8QEgIVNYGmSPwV0GueIcsUev0NEfUug/viewform?usp=sf_link), make sure all 60 chunks are downloaded completely, then use the following command to merge them into a single archive file and extract it:
 
 ```bash
-cat glm-130b-sat.tar.part_* > glm-130b-sat.tar
+ls  glm-130b-sat.tar.part_* |  sed   -n  '/glm-130b-sat.tar.part_00/,/glm-130b-sat.tar.part_59/p' |  xargs  -i  cat  {} >glm-130b-sat.tar
 tar xvf glm-130b-sat.tar
 ```
 
